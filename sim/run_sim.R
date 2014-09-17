@@ -19,8 +19,10 @@ tab = t(sapply( 10^(1:n_tab_rows),
                     c(x, n, n/x, 4*n/x)
                 }))
 
-#tab = data.frame(tab)
-#tab[,1] = formatC(tab[,1],width=n_tab_rows+1)
+tab = data.frame(tab)
+
+tab[,1] = as.integer(tab[,1])
+tab[,2] = as.integer(tab[,2])
 
 colnames(tab) = c("1:n", "$d_i<1$", "$\\pi/4$", "$\\pi$")
 
